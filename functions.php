@@ -21,8 +21,8 @@ function timlegal_setup() {
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height'      => 108,
-			'width'       => 546,
+			'height'      => 15,
+			'width'       => 15,
 			'flex-height' => true,
 			'flex-width'  => true,
 		)
@@ -37,6 +37,18 @@ function timlegal_setup() {
 	);
 }
 add_action( 'after_setup_theme', 'timlegal_setup' );
+
+/**
+ * Force the custom logo markup to render at a fixed size so the WordPress
+ * frontend respects the intended logo dimensions.
+ */
+function timlegal_force_custom_logo_size( $html, $blog_id ) {
+	$html = preg_replace( '/width="[^"]*"/', 'width="15"', $html );
+	$html = preg_replace( '/height="[^"]*"/', 'height="15"', $html );
+
+	return $html;
+}
+add_filter( 'get_custom_logo', 'timlegal_force_custom_logo_size', 10, 2 );
 
 /**
  * Set a default custom logo on first activation so the bundled image
