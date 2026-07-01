@@ -8,6 +8,9 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo">
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/LOGO-TIMLEGAL-PUTIH.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>">
+        </a>
         <h5><?php bloginfo( 'name' ); ?></h5>
         <p style="max-width:280px;">Integrating business &amp; legality for sustainability. Tim legal &amp; government relations permanen untuk industri sigaret Indonesia.</p>
       </div>
