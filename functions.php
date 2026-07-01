@@ -21,8 +21,8 @@ function timlegal_setup() {
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height'      => 15,
-			'width'       => 15,
+			'height'      => 30,
+			'width'       => 180,
 			'flex-height' => true,
 			'flex-width'  => true,
 		)
@@ -43,8 +43,8 @@ add_action( 'after_setup_theme', 'timlegal_setup' );
  * frontend respects the intended logo dimensions.
  */
 function timlegal_force_custom_logo_size( $html, $blog_id ) {
-	$html = preg_replace( '/width="[^"]*"/', 'width="15"', $html );
-	$html = preg_replace( '/height="[^"]*"/', 'height="15"', $html );
+	$html = preg_replace( '/width="[^"]*"/', 'width="180"', $html );
+	$html = preg_replace( '/height="[^"]*"/', 'height="30"', $html );
 
 	return $html;
 }
